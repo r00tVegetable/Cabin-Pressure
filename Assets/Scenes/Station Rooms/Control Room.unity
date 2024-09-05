@@ -788,7 +788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc4a03fe22864247bc95781eb009f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  electrolysis: 0
+  drainOxygen: 0
+  O2Display: {fileID: 665096131}
   oxygen: 0
 --- !u!1 &611781324
 GameObject:
@@ -1056,7 +1057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Oxygen Saturation: %%'
+  m_text: "Oxygen Saturation: \n%%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ceb3b0e6525d8d145bba2ceed6a5b2d8, type: 2}
   m_sharedMaterial: {fileID: -2627982894006980900, guid: ceb3b0e6525d8d145bba2ceed6a5b2d8, type: 2}
