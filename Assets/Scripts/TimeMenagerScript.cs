@@ -14,6 +14,11 @@ public class TimeMenagerScript : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         inGameTime += Time.deltaTime * 5f;
+
+        if (inGameTime >= 1439.0f)
+        {
+            inGameTime = 0f;
+        }
     }
 
     public void Update()

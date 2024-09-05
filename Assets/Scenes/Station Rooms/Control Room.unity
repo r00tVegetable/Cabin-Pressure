@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeDisplay: {fileID: 988042427}
   pauseScreen: {fileID: 2064200695}
-  inGameTime: 0
+  inGameTime: 1400
 --- !u!1 &193256525
 GameObject:
   m_ObjectHideFlags: 0
