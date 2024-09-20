@@ -6,8 +6,16 @@ using TMPro;
 public class TimeMenagerScript : MonoBehaviour
 {
     [SerializeField] TMP_Text timeDisplay;
+    [SerializeField] TMP_Text dayDisplay; 
     [SerializeField] GameObject pauseScreen;
     public float inGameTime;
+    public int dayCount;
+
+    public void Start()
+    {
+        inGameTime = 1160f;
+        dayCount = 0;
+    }
 
     public void KeepTime()
     {
@@ -17,6 +25,7 @@ public class TimeMenagerScript : MonoBehaviour
         if (inGameTime >= 1439.0f)
         {
             inGameTime = 0f;
+            dayCount++;
         }
     }
 
@@ -31,5 +40,6 @@ public class TimeMenagerScript : MonoBehaviour
         int seconds = Mathf.FloorToInt(inGameTime - minutes * 60f);
 
         timeDisplay.text = string.Format("{0:0}:{1:00}", minutes, seconds) + " S.S.T.";
+        dayDisplay.text = "Day " + dayCount.ToString();
     }
 }
