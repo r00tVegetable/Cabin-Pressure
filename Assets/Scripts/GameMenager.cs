@@ -12,12 +12,12 @@ public class GameMenager : MonoBehaviour
     private void Start()
     {
         oxygen = 100f;
-        drainOxygen = true;
+        drainOxygen = false;
     }
 
     public void Update()
     {
-        if (drainOxygen == false)
+        if (drainOxygen == true)
         {
             oxygen -= Time.deltaTime;
         }
