@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameMenager : MonoBehaviour
 {
     [SerializeField] GameObject theStatics;
+    [SerializeField] GameObject pauseScreen;
 
     [SerializeField] bool drainOxygen;
     [SerializeField] TMP_Text O2Display;
@@ -21,14 +23,16 @@ public class GameMenager : MonoBehaviour
     {
         O2Display.text = $"Oxygen Saturation: {oxygen}%";
 
-        if (drainOxygen == true)
+        if (drainOxygen == true && pauseScreen.activeInHierarchy == false)
         {
             oxygen -= Time.deltaTime;
         }
 
         if (oxygen <= 0)
         {
-
+            Time.timeScale = 0;
+            SceneManager.LoadScene(6);
+            Destroy(theStatics);
         }
 
     }

@@ -924,6 +924,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc4a03fe22864247bc95781eb009f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theStatics: {fileID: 107653563}
+  pauseScreen: {fileID: 2064200695}
   drainOxygen: 0
   O2Display: {fileID: 665096131}
   oxygen: 0
