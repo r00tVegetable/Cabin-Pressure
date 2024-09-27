@@ -30,10 +30,15 @@ public class GameMenager : MonoBehaviour
 
         if (oxygen <= 0)
         {
-            Time.timeScale = 0;
-            SceneManager.LoadScene(6);
-            Destroy(theStatics);
+            KillMe();
         }
 
+    }
+
+    public void KillMe()
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene(6);
+        Destroy(theStatics);
     }
 }
