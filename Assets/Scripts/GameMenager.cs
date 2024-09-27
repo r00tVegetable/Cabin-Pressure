@@ -21,7 +21,7 @@ public class GameMenager : MonoBehaviour
 
     public void Update()
     {
-        O2Display.text = $"Oxygen Saturation: {oxygen}%";
+        O2Display.text = $"Oxygen Saturation: {oxygen:0.00}%";
 
         if (drainOxygen == true && pauseScreen.activeInHierarchy == false)
         {

@@ -1171,10 +1171,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2006659497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.9016461, y: 0.9205186}
-  m_AnchorMax: {x: 0.9016461, y: 0.9205186}
-  m_AnchoredPosition: {x: -1472, y: -926}
-  m_SizeDelta: {x: 467.1568, y: 84.4476}
+  m_AnchorMin: {x: 0.14500001, y: 0.030518519}
+  m_AnchorMax: {x: 0.14500001, y: 0.030518519}
+  m_AnchoredPosition: {x: 79.83801, y: 4.631897}
+  m_SizeDelta: {x: 682.416, y: 75.184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665096131
 MonoBehaviour:
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oxygen Saturation: \n%%"
+  m_text: 'Oxygen Saturation: %%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ceb3b0e6525d8d145bba2ceed6a5b2d8, type: 2}
   m_sharedMaterial: {fileID: -2627982894006980900, guid: ceb3b0e6525d8d145bba2ceed6a5b2d8, type: 2}
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 2.2423096, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
