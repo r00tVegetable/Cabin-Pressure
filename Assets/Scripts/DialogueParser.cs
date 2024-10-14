@@ -6,6 +6,7 @@ using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 
 public class DialogueParser : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class DialogueParser : MonoBehaviour
     private void Start()
     {
         string file = "Assets/Dialogue";
-        string sceneNum = EditorApplication.currentScene;
+        string sceneNum = EditorSceneManager.GetActiveScene().name;
         sceneNum = Regex.Replace(sceneNum, "[^0-9]", "");
         file += sceneNum;
         file += ".txt";
@@ -77,46 +78,36 @@ public class DialogueParser : MonoBehaviour
         }
     }
 
-    public string GetPosition(int lineNumber)
-    {
-        if (lineNumber < lines.Count)
-        {
+    public string GetPosition(int lineNumber) {
+        if (lineNumber < lines.Count) {
             return lines[lineNumber].position;
         }
         return "";
     }
 
-    public string GetName(int lineNumber)
-    {
-        if (lineNumber < lines.Count)
-        {
+    public string GetName(int lineNumber) {
+        if (lineNumber < lines.Count) {
             return lines[lineNumber].name;
         }
         return "";
     }
 
-    public string GetContent(int lineNumber)
-    {
-        if (lineNumber < lines.Count)
-        {
+    public string GetContent(int lineNumber) {
+        if (lineNumber < lines.Count) {
             return lines[lineNumber].content;
         }
         return "";
     }
 
-    public int GetPose(int lineNumber)
-    {
-        if (lineNumber < lines.Count)
-        {
+    public int GetPose(int lineNumber) {
+        if (lineNumber < lines.Count) {
             return lines[lineNumber].pose;
         }
         return 0;
     }
 
-    public string[] GetOptions(int lineNumber)
-    {
-        if (lineNumber < lines.Count)
-        {
+    public string[] GetOptions(int lineNumber) {
+        if (lineNumber < lines.Count) {
             return lines[lineNumber].options;
         }
         return new string[0];
