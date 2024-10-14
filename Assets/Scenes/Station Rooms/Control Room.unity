@@ -157,10 +157,10 @@ Transform:
   - {fileID: 1221392929}
   - {fileID: 133870768}
   - {fileID: 1713543930}
-  - {fileID: 2006659497}
-  - {fileID: 1277593343}
   - {fileID: 523368401}
   - {fileID: 1244284682}
+  - {fileID: 2006659497}
+  - {fileID: 1277593343}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &107653565
