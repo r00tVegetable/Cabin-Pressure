@@ -5,4 +5,5 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public Sprite[] characterPoses = null;
+    public Sprite[] characterFaces = null;
 }
