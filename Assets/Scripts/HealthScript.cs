@@ -16,7 +16,7 @@ public class HealthScript : MonoBehaviour
     private void Start()
     {//might cause issues later with saves, check back
         sanity = 100;
-        hunger = 0;
+        hunger = 90;
         hungerClock = 0;
     }
 
@@ -37,10 +37,10 @@ public class HealthScript : MonoBehaviour
         if(hungerClock >= 480)
         {
             hungerClock = 0;
-            hunger++;
-            sanity -= 2;
+            hunger--;
+            LowerSanity(2);
         }
-        if(hungerClock >= 90)
+        if(hungerClock <= 0)
         {
             gameMenager.KillMe();
         }

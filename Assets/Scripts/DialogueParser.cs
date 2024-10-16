@@ -5,7 +5,6 @@ using UnityEditor;
 using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
-using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 
 public class DialogueParser : MonoBehaviour
