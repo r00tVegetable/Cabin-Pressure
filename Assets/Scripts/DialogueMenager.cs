@@ -90,7 +90,7 @@ public class DialogueMenager : MonoBehaviour
             SetSpritePositions(character);
 
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-            //currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
+            currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
         }
     }
 
@@ -113,10 +113,10 @@ public class DialogueMenager : MonoBehaviour
         {
             GameObject button = (GameObject)Instantiate(choiceBox);
             Button b = button.GetComponent<Button>();
-            //ChoiceButton cb = button.GetComponent<ChoiceButton>();
-            //cb.SetText(options[i].Split(':')[0]);
-            //cb.option = options[i].Split(':')[1];
-            //cb.box = this;
+            ChoiceButton cb = button.GetComponent<ChoiceButton>();
+            cb.SetText(options[i].Split(':')[0]);
+            cb.option = options[i].Split(':')[1];
+            cb.box = this;
             b.transform.SetParent(this.transform);
             b.transform.localPosition = new Vector3(0, -25 + (i * 50));
             b.transform.localScale = new Vector3(1, 1, 1);
