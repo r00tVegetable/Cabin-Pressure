@@ -1,22 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
     [SerializeField] GameMenager gameMenager;
+
     public int sanity;
     public bool IsSanityLow;
 
-    public float hungerClock;
     public int hunger;
+    public float hungerClock;
     public bool IsHungry;
     public bool IsStarving;
 
+    public int thirst;
+    public float thisrtClock;
+
+    [SerializeField] Image sanityMetar;
+    [SerializeField] Image hungerMetar;
+    [SerializeField] Image thirstMetar;
+
     private void Start()
-    {//might cause issues later with saves, check back
+    {
         sanity = 100;
-        hunger = 90;
+        hunger = 100;
+
         hungerClock = 0;
     }
 
@@ -31,6 +41,7 @@ public class HealthScript : MonoBehaviour
         {
             IsSanityLow = true;
         }
+        sanityMetar.fillAmount = sanity / 100;
 
         //Hunger clock:
         hungerClock += Time.deltaTime;
@@ -44,6 +55,10 @@ public class HealthScript : MonoBehaviour
         {
             gameMenager.KillMe();
         }
+        sanityMetar.fillAmount = hunger / 100;
+
+        //Thirst clock:
+
     }
 
     public void LowerSanity(int value)
@@ -59,7 +74,7 @@ public class HealthScript : MonoBehaviour
     public void Eat(int amount)
     {
         hungerClock = 0;
-        hunger -= amount;
+        hunger += amount;
         sanity += amount;
     }
 }
