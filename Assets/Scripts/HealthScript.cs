@@ -7,16 +7,16 @@ public class HealthScript : MonoBehaviour
 {
     [SerializeField] GameMenager gameMenager;
 
-    public int sanity;
+    public float sanity;
     public bool IsSanityLow;
 
-    public int hunger;
+    public float hunger;
     public float hungerClock;
     public bool IsHungry;
     public bool IsStarving;
 
-    public int thirst;
-    public float thisrtClock;
+    public float thirst;
+    public float thirstClock;
 
     [SerializeField] Image sanityMetar;
     [SerializeField] Image hungerMetar;
@@ -26,6 +26,7 @@ public class HealthScript : MonoBehaviour
     {
         sanity = 100;
         hunger = 100;
+        thirst = 10;
 
         hungerClock = 0;
     }
@@ -51,13 +52,25 @@ public class HealthScript : MonoBehaviour
             hunger--;
             LowerSanity(2);
         }
-        if(hungerClock <= 0)
+        if(hunger <= 0)
         {
             gameMenager.KillMe();
         }
-        sanityMetar.fillAmount = hunger / 100;
+        hungerMetar.fillAmount = hunger / 100;
 
         //Thirst clock:
+        thirstClock += Time.deltaTime;
+        if(thirstClock >= 720)
+        {
+            thirstClock = 0;
+            thirst--;
+            LowerSanity(1);
+        }
+        if(thirst <= 0)
+        {
+            gameMenager.KillMe();
+        }
+        thirstMetar.fillAmount = thirst / 10;
 
     }
 
@@ -76,5 +89,13 @@ public class HealthScript : MonoBehaviour
         hungerClock = 0;
         hunger += amount;
         sanity += amount;
+        thirst++;
+    }
+
+    public void Drink()
+    {
+        thirstClock = 0;
+        thirst = 10;
+        sanity++;
     }
 }
