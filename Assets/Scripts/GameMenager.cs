@@ -10,15 +10,20 @@ public class GameMenager : MonoBehaviour
     [SerializeField] GameObject pauseScreen;
 
     [SerializeField] TMP_Text O2Display;
-    [SerializeField] float drainSpeed;
-    [SerializeField] bool drainOxygen;  //Change to public when making electrolysis system.
+    [SerializeField] float drainBuffer;
+    [SerializeField] bool drainOxygen;
+    [SerializeField] bool solarPanels;       //Change to public when making electrolysis system.
+    [SerializeField] bool stationPower;
+
     public float oxygen;
+    public float electricity;
 
     private void Start()
     {
         oxygen = 100f;
         drainOxygen = false;
-        
+        electricity = 100f;
+        solarPanels = true;
     }
 
     public void Update()
@@ -28,33 +33,55 @@ public class GameMenager : MonoBehaviour
         
         if (drainOxygen == true && pauseScreen.activeInHierarchy == false)
         {
-            oxygen -= Time.deltaTime/drainSpeed;
+            oxygen -= Time.deltaTime/drainBuffer;
         }
         if(oxygen >75)
         {
-            drainSpeed = 40f;
+            drainBuffer = 40f;
         }
         if(oxygen <= 75)
         {
-            drainSpeed = 30f;
+            drainBuffer = 30f;
         }
         if (oxygen <= 50)
         {
-            drainSpeed = 20f;
+            drainBuffer = 20f;
         }
         if (oxygen <= 25)
         {
-            drainSpeed = 10f;
+            drainBuffer = 10f;
         }
         if(oxygen <= 10)
         {
-            drainSpeed = 5f;
+            drainBuffer = 5f;
         }
         if (oxygen <= 0)
         {
             KillMe();
         }
 
+        //Electrisity System:
+        if(solarPanels == true && pauseScreen.activeInHierarchy == false)
+        {
+            electricity += Time.deltaTime;
+        }
+        if(solarPanels == false && pauseScreen.activeInHierarchy == false)
+        {
+            electricity -= Time.deltaTime;
+        }
+        if(electricity > 100)
+        {
+            electricity = 100;
+        }
+        if(electricity > 0)
+        {
+            stationPower = true;
+        }
+        if(electricity <= 0)
+        {
+            electricity = 0;
+            stationPower = false;
+        }
     }
 
     public void KillMe()
