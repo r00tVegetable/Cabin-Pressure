@@ -12,8 +12,8 @@ public class HealthScript : MonoBehaviour
 
     public float hunger;
     public float hungerClock;
-    public bool IsHungry;
-    public bool IsStarving;
+    //public bool IsHungry;
+    //public bool IsStarving;
 
     public float thirst;
     public float thirstClock;
@@ -34,6 +34,7 @@ public class HealthScript : MonoBehaviour
     public void Update()
     {
         //Sanity checker:
+        sanityMetar.fillAmount = sanity / 100;
         if (sanity > 25)
         {
             IsSanityLow = false;
@@ -42,10 +43,11 @@ public class HealthScript : MonoBehaviour
         {
             IsSanityLow = true;
         }
-        sanityMetar.fillAmount = sanity / 100;
 
         //Hunger clock:
         hungerClock += Time.deltaTime;
+        hungerMetar.fillAmount = hunger / 100;
+
         if(hungerClock >= 480)
         {
             hungerClock = 0;
@@ -56,21 +58,21 @@ public class HealthScript : MonoBehaviour
         {
             gameMenager.KillMe();
         }
-        hungerMetar.fillAmount = hunger / 100;
 
         //Thirst clock:
         thirstClock += Time.deltaTime;
+        thirstMetar.fillAmount = thirst / 10;
+
         if(thirstClock >= 720)
         {
             thirstClock = 0;
-            thirst--;
+           thirst -= 1;
             LowerSanity(1);
         }
         if(thirst <= 0)
         {
             gameMenager.KillMe();
         }
-        thirstMetar.fillAmount = thirst / 10;
 
     }
 
@@ -88,14 +90,16 @@ public class HealthScript : MonoBehaviour
     {
         hungerClock = 0;
         hunger += amount;
-        sanity += amount;
+        AddSanity(amount);
         thirst++;
+        Debug.Log($"current hunger:{hunger}");
     }
 
     public void Drink()
     {
         thirstClock = 0;
-        thirst = 10;
-        sanity++;
+        thirst = 10f;
+        AddSanity(1);
+        Debug.Log($"current thirst:{thirst }");
     }
 }
