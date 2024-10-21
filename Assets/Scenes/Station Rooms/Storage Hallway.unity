@@ -230,10 +230,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1336053578}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 545, y: 397}
-  m_SizeDelta: {x: 675.0814, y: 92.5801}
+  m_AnchorMin: {x: 0.2046875, y: 0.048}
+  m_AnchorMax: {x: 0.2046875, y: 0.048}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 675.0814, y: 92.58011}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1247053058
 MonoBehaviour:
@@ -257,15 +257,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Storage Hallway
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ceb3b0e6525d8d145bba2ceed6a5b2d8, type: 2}
-  m_sharedMaterial: {fileID: -2627982894006980900, guid: ceb3b0e6525d8d145bba2ceed6a5b2d8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 298fa7b9c9732e0488854778cb6ecb15, type: 2}
+  m_sharedMaterial: {fileID: -6711343844055595151, guid: 298fa7b9c9732e0488854778cb6ecb15, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282927176
-  m_fontColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
