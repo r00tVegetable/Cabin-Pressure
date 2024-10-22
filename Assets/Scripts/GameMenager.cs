@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameMenager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameMenager : MonoBehaviour
     [SerializeField] bool drainOxygen;
     [SerializeField] bool solarPanels;       //Change to public when making electrolysis system.
     [SerializeField] bool stationPower;
+    [SerializeField] Image powerLevel;
 
     public float oxygen;
     public float electricity;
@@ -61,6 +63,7 @@ public class GameMenager : MonoBehaviour
         }
 
         //Electrisity System:
+        powerLevel.fillAmount = electricity / 100;
         if(solarPanels == true && pauseScreen.activeInHierarchy == false)
         {
             electricity += Time.deltaTime;

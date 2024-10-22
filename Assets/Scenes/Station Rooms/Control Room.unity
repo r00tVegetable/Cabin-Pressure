@@ -1548,6 +1548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: STATICS
       objectReference: {fileID: 0}
+    - target: {fileID: 3787354709063146657, guid: b13f194f764d963499aac892be18a3d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6020745397678736073, guid: b13f194f764d963499aac892be18a3d1, type: 3}
       propertyPath: m_FillAmount
       value: 1

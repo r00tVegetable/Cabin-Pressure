@@ -66,7 +66,7 @@ public class HealthScript : MonoBehaviour
         if(thirstClock >= 720)
         {
             thirstClock = 0;
-           thirst -= 1;
+            thirst -= 1;
             LowerSanity(1);
         }
         if(thirst <= 0)
