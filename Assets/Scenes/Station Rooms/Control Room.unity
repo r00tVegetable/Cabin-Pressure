@@ -545,7 +545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &630734282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1551,6 +1551,18 @@ PrefabInstance:
     - target: {fileID: 3787354709063146657, guid: b13f194f764d963499aac892be18a3d1, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248975973497387967, guid: b13f194f764d963499aac892be18a3d1, type: 3}
+      propertyPath: m_Color.a
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586732144317873297, guid: b13f194f764d963499aac892be18a3d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601734503407085274, guid: b13f194f764d963499aac892be18a3d1, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6020745397678736073, guid: b13f194f764d963499aac892be18a3d1, type: 3}
       propertyPath: m_FillAmount

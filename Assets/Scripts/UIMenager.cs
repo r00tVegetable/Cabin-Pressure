@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIMenager : MonoBehaviour
 {
     [SerializeField] GameObject pauseScreen;
+    [SerializeField] GameObject statics;
 
     public void Start()
     {
@@ -23,5 +25,12 @@ public class UIMenager : MonoBehaviour
         {
             pauseScreen.SetActive(false);
         }
+    }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadScene(0);
+        pauseScreen.SetActive(false);
+        Destroy(statics);
     }
 }
