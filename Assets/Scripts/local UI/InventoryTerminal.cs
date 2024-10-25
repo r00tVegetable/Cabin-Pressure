@@ -5,6 +5,10 @@ using UnityEngine;
 public class InventoryTerminal : MonoBehaviour
 {
     [SerializeField] GameObject InventoryPannel;
+    public void Start()
+    {
+        InventoryPannel.SetActive(false);
+    }
 
     public void ActivateInventory()
     {
@@ -13,6 +17,6 @@ public class InventoryTerminal : MonoBehaviour
 
     public void DeactivateInventory()
     {
-        InventoryPannel.SetActive(true);
+        InventoryPannel.SetActive(false);
     }
 }
