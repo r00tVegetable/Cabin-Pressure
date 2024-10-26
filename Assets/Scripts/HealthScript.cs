@@ -42,6 +42,8 @@ public class HealthScript : MonoBehaviour
         if (sanity <= 25)
         {
             IsSanityLow = true;
+            //add vanessa's sick sprite here.
+            //break the displays of other stats somehow.
         }
 
         //Hunger clock:

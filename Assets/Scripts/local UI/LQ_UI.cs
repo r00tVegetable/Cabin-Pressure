@@ -20,4 +20,12 @@ public class LQ_UI : MonoBehaviour
     {
         KitchenPannel.SetActive(false);
     }
+
+    public void Update()
+    {
+        if(KitchenPannel.activeInHierarchy == true)
+        {
+
+        }
+    }
 }

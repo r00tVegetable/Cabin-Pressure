@@ -39,23 +39,23 @@ public class GameMenager : MonoBehaviour
         }
         if(oxygen >75)
         {
-            drainBuffer = 40f;
+            drainBuffer = 30f;
         }
         if(oxygen <= 75)
         {
-            drainBuffer = 30f;
+            drainBuffer = 20f;
         }
         if (oxygen <= 50)
         {
-            drainBuffer = 20f;
+            drainBuffer = 10f;
         }
         if (oxygen <= 25)
         {
-            drainBuffer = 10f;
+            drainBuffer = 5f;
         }
         if(oxygen <= 10)
         {
-            drainBuffer = 5f;
+            drainBuffer = 1f;
         }
         if (oxygen <= 0)
         {
@@ -91,6 +91,7 @@ public class GameMenager : MonoBehaviour
     {
         Time.timeScale = 0;
         SceneManager.LoadScene(6);
+        //save final score here.
         Destroy(theStatics);
     }
 }
