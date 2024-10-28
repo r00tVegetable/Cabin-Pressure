@@ -42,7 +42,7 @@ public class UIMenager : MonoBehaviour
                 pauseScreen.SetActive(true);
             }
         }
-        else if (pauseScreen.activeInHierarchy == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && pauseScreen.activeInHierarchy == true)
         {
             pauseScreen.SetActive(false);
         }

@@ -90,10 +90,11 @@ public class HealthScript : MonoBehaviour
 
     public void Eat(int amount)
     {
-        hungerClock = 0;
-        hunger += amount;
-        AddSanity(amount);
-        thirst++;
+        //hungerClock = 0;
+        //hunger += amount;
+        //AddSanity(amount);
+        //thirst++;
+        hunger++;
         Debug.Log($"current hunger:{hunger}");
     }
 
