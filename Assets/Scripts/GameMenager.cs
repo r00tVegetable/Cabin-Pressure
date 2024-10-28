@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class GameMenager : MonoBehaviour
 {
-    [SerializeField] GameObject theStatics;
     [SerializeField] GameObject pauseScreen;
 
     [SerializeField] TMP_Text O2Display;
@@ -32,16 +31,16 @@ public class GameMenager : MonoBehaviour
     {
         //Oxygen system:
         O2Display.text = $"Oxygen Saturation: {oxygen:0.00}%";
-        
+
         if (drainOxygen == true && pauseScreen.activeInHierarchy == false)
         {
-            oxygen -= Time.deltaTime/drainBuffer;
+            oxygen -= Time.deltaTime / drainBuffer;
         }
-        if(oxygen >75)
+        if (oxygen > 75)
         {
             drainBuffer = 30f;
         }
-        if(oxygen <= 75)
+        if (oxygen <= 75)
         {
             drainBuffer = 20f;
         }
@@ -53,7 +52,7 @@ public class GameMenager : MonoBehaviour
         {
             drainBuffer = 5f;
         }
-        if(oxygen <= 10)
+        if (oxygen <= 10)
         {
             drainBuffer = 1f;
         }
@@ -64,23 +63,23 @@ public class GameMenager : MonoBehaviour
 
         //Electrisity System:
         powerLevel.fillAmount = electricity / 100;
-        if(solarPanels == true && pauseScreen.activeInHierarchy == false)
+        if (solarPanels == true && pauseScreen.activeInHierarchy == false)
         {
             electricity += Time.deltaTime;
         }
-        if(solarPanels == false && pauseScreen.activeInHierarchy == false)
+        if (solarPanels == false && pauseScreen.activeInHierarchy == false)
         {
             electricity -= Time.deltaTime;
         }
-        if(electricity > 100)
+        if (electricity > 100)
         {
             electricity = 100;
         }
-        if(electricity > 0)
+        if (electricity > 0)
         {
             stationPower = true;
         }
-        if(electricity <= 0)
+        if (electricity <= 0)
         {
             electricity = 0;
             stationPower = false;
@@ -90,8 +89,7 @@ public class GameMenager : MonoBehaviour
     public void KillMe()
     {
         Time.timeScale = 0;
-        SceneManager.LoadScene(6);
         //save final score here.
-        Destroy(theStatics);
+        SceneManager.LoadScene(2);
     }
 }
