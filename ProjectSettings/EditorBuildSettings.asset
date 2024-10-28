@@ -9,20 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 4c5d3bd24c6fc1b4586645fe166cb9f3
   - enabled: 1
-    path: Assets/Scenes/Station Rooms/Control Room.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Station Rooms/Living Quarters.unity
-    guid: a47436ddda4e99c4785710b5659703a4
-  - enabled: 1
-    path: Assets/Scenes/Station Rooms/Storage Hallway.unity
-    guid: b18c9a271ff3ac745a4de902f1e4a8dc
-  - enabled: 1
-    path: Assets/Scenes/Station Rooms/The Garage.unity
-    guid: 32c7dbb7053613e4ca0fb6236d9a8d52
-  - enabled: 1
-    path: Assets/Scenes/Station Rooms/Window Hallway.unity
-    guid: 77212dfd2bd23f749b803e6d95c850c3
+    path: Assets/Scenes/Game Scene.unity
+    guid: 55fd3c5d29e34f3419da24f282d0a6b7
   - enabled: 1
     path: Assets/Scenes/The End Game.unity
     guid: 5ef24e0f716dc9e4c8a8162216e983ba
