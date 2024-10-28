@@ -5812,7 +5812,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5490995373322040927, guid: e8c511d007ad1e649a06f157e3e8b7df, type: 3}
+      - m_Target: {fileID: 1461996079}
         m_TargetAssemblyTypeName: HealthScript, Assembly-CSharp
         m_MethodName: Eat
         m_Mode: 3
