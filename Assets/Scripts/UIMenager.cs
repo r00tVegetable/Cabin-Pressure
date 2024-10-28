@@ -10,8 +10,6 @@ public class UIMenager : MonoBehaviour
     [SerializeField] GameObject kitchenPannel;
     [SerializeField] GameObject inventoryPannel;
 
-    [SerializeField] Sprite[] backgrounds;
-
     public void Start()
     {
         pauseScreen.SetActive(false);

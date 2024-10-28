@@ -1040,25 +1040,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 597120217}
         m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
         m_MethodName: WindowHall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
-        m_MethodName: buttonCheck
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 327182622}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1274,7 +1262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &391850650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1555,7 +1543,18 @@ MonoBehaviour:
   - {fileID: 1563853107}
   - {fileID: 1469317382}
   CRButton: {fileID: 1684785316}
-  doorAnimator: {fileID: 1721867105}
+  LQButton: {fileID: 1441294147}
+  SHButton: {fileID: 1563853107}
+  WHButton: {fileID: 327182622}
+  TGButton: {fileID: 1469317382}
+  backgrounds:
+  - {fileID: 21300000, guid: 7cfa8bc2d4f7cec4884f8cb63b32aac1, type: 3}
+  - {fileID: 21300000, guid: aeb9aabcab0933f47be2896786093e72, type: 3}
+  - {fileID: 21300000, guid: ed83eaade67bf2041bf5c806880ef694, type: 3}
+  - {fileID: 21300000, guid: 9af561abe420cdc4692c9517473fbf05, type: 3}
+  - {fileID: 21300000, guid: f38207c608c1fdf49b7bfc4603aa0516, type: 3}
+  - {fileID: 21300000, guid: edc584608d483824888dd26d76fd8eff, type: 3}
+  backgroundSprite: {fileID: 660211540}
   animationFrame: {fileID: 1721867101}
 --- !u!1 &632175836
 GameObject:
@@ -1785,6 +1784,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660211538}
   m_CullTransparentMesh: 1
+--- !u!1 &716123448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 716123449}
+  - component: {fileID: 716123450}
+  m_Layer: 0
+  m_Name: InventoryMenager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &716123449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716123448}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1870458201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &716123450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716123448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ebbd3b28cbd79448ee850a04142a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: 0
+  water: 0
+  alloy: 0
+  carbon: 0
 --- !u!1 &732795824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,8 +2611,6 @@ MonoBehaviour:
   controlPanel: {fileID: 632175836}
   kitchenPannel: {fileID: 391850649}
   inventoryPannel: {fileID: 294005655}
-  backgrounds:
-  - {fileID: 21300000, guid: 7cfa8bc2d4f7cec4884f8cb63b32aac1, type: 3}
 --- !u!1 &940062718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,25 +3592,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 597120217}
         m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
         m_MethodName: LivingQus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
-        m_MethodName: buttonCheck
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1441294147}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3764,25 +3797,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 597120217}
         m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
         m_MethodName: Garage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
-        m_MethodName: buttonCheck
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1469317382}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4161,25 +4182,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 597120217}
         m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
         m_MethodName: StorageHall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
-        m_MethodName: buttonCheck
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1563853107}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4623,25 +4632,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 597120217}
         m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
         m_MethodName: ControlRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NavigationScript, Assembly-CSharp
-        m_MethodName: buttonCheck
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1684785316}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4722,7 +4719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1721867102
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4739,7 +4736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.1519, y: 0}
+  m_AnchoredPosition: {x: -0.0027988, y: -0.00066757}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1721867103
@@ -5224,6 +5221,7 @@ Transform:
   - {fileID: 597120216}
   - {fileID: 1461996078}
   - {fileID: 1867223745}
+  - {fileID: 716123449}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1879832644
@@ -6026,10 +6024,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 327182626}
   - {fileID: 1684785320}
   - {fileID: 1441294151}
   - {fileID: 1563853111}
+  - {fileID: 327182626}
   - {fileID: 1469317383}
   m_Father: {fileID: 1680123903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

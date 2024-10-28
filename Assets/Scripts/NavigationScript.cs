@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NavigationScript : MonoBehaviour
 {
     public List<GameObject> buttons = new List<GameObject>();
 
     [SerializeField] GameObject CRButton;
-    [SerializeField] Animator doorAnimator;
+    [SerializeField] GameObject LQButton;
+    [SerializeField] GameObject SHButton;
+    [SerializeField] GameObject WHButton;
+    [SerializeField] GameObject TGButton;
+
+    [SerializeField] Sprite[] backgrounds;
+    [SerializeField] Image backgroundSprite;
+
     [SerializeField] GameObject animationFrame;
 
     public void Start()
     {
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
+        buttonCheck();
         CRButton.SetActive(false);
-        animationFrame.SetActive(false);
     }
 
     public void buttonCheck()
@@ -25,46 +35,81 @@ public class NavigationScript : MonoBehaviour
         }
     }
 
-    public void WindowHall()
-    {
-        animationFrame.SetActive(true);
-        doorAnimator.SetTrigger("DoorTransition");
-        //SceneManager.LoadScene(5);
-    }
-
     public void ControlRoom()
     {
         animationFrame.SetActive(true);
-        doorAnimator.SetTrigger("DoorTransition");
-        //SceneManager.LoadScene(1);
+        StartCoroutine(countdownControlRoom());
+        buttonCheck();
+        CRButton.SetActive(false);
+    }
+
+    public void WindowHall()
+    {
+        animationFrame.SetActive(true);
+        StartCoroutine(countdownWindowHall());
+        buttonCheck();
+        WHButton.SetActive(false);
     }
 
     public void LivingQus()
     {
         animationFrame.SetActive(true);
-        doorAnimator.SetTrigger("DoorTransition");
-        //SceneManager.LoadScene(2);
+        StartCoroutine(countdownLivingQus());
+        buttonCheck();
+        LQButton.SetActive(false);
     }
 
     public void StorageHall()
     {
         animationFrame.SetActive(true);
-        doorAnimator.SetTrigger("DoorTransition");
-        //SceneManager.LoadScene(3);
+        StartCoroutine(countdownStorageHall());
+        buttonCheck();
+        SHButton.SetActive(false);
     }
 
     public void Garage()
     {
         animationFrame.SetActive(true);
-        doorAnimator.SetTrigger("DoorTransition");
-        StartCoroutine(countdown());
+        StartCoroutine(countdownGarage());
         buttonCheck();
-        //deactivate this button
+        TGButton.SetActive(false);
     }
 
-    IEnumerator countdown()
+    IEnumerator countdownControlRoom()
     {
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSecondsRealtime(0.85f);
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
+        yield return new WaitForSecondsRealtime(0.85f);
+        animationFrame.SetActive(false);
+    }
+    IEnumerator countdownWindowHall()
+    {
+        yield return new WaitForSecondsRealtime(0.85f);
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[3];
+        yield return new WaitForSecondsRealtime(0.85f);
+        animationFrame.SetActive(false);
+    }
+    IEnumerator countdownLivingQus()
+    {
+        yield return new WaitForSecondsRealtime(0.85f);
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[1];
+        yield return new WaitForSecondsRealtime(0.85f);
+        animationFrame.SetActive(false);
+    } 
+    
+    IEnumerator countdownStorageHall()
+    {
+        yield return new WaitForSecondsRealtime(0.85f);
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[2];
+        yield return new WaitForSecondsRealtime(0.85f);
+        animationFrame.SetActive(false);
+    }
+
+    IEnumerator countdownGarage()
+    {
+        yield return new WaitForSecondsRealtime(0.85f);
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[4];
+        yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
     }
 }

@@ -56,6 +56,10 @@ public class HealthScript : MonoBehaviour
             hunger--;
             LowerSanity(2);
         }
+        if(hunger > 100)
+        {
+            hunger = 100f;
+        }
         if (hunger <= 0)
         {
             gameMenager.KillMe();
@@ -90,11 +94,10 @@ public class HealthScript : MonoBehaviour
 
     public void Eat(int amount)
     {
-        //hungerClock = 0;
-        //hunger += amount;
-        //AddSanity(amount);
-        //thirst++;
-        hunger++;
+        hungerClock = 0;
+        hunger += amount;
+        AddSanity(amount);
+        thirst++;
         Debug.Log($"current hunger:{hunger}");
     }
 
