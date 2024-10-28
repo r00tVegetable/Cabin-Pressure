@@ -6,45 +6,65 @@ using UnityEngine.SceneManagement;
 public class NavigationScript : MonoBehaviour
 {
     public List<GameObject> buttons = new List<GameObject>();
+
     [SerializeField] GameObject CRButton;
+    [SerializeField] Animator doorAnimator;
+    [SerializeField] GameObject animationFrame;
 
     public void Start()
     {
         CRButton.SetActive(false);
+        animationFrame.SetActive(false);
     }
 
-    public void buttonCheck(GameObject disableThis)
+    public void buttonCheck()
     {
         foreach (GameObject button in buttons)
         {
             button.SetActive(true);
         }
-
-        disableThis.SetActive(false);
     }
 
     public void WindowHall()
     {
-        SceneManager.LoadScene(5);
+        animationFrame.SetActive(true);
+        doorAnimator.SetTrigger("DoorTransition");
+        //SceneManager.LoadScene(5);
     }
 
     public void ControlRoom()
     {
-        SceneManager.LoadScene(1);
+        animationFrame.SetActive(true);
+        doorAnimator.SetTrigger("DoorTransition");
+        //SceneManager.LoadScene(1);
     }
 
     public void LivingQus()
     {
-        SceneManager.LoadScene(2);
+        animationFrame.SetActive(true);
+        doorAnimator.SetTrigger("DoorTransition");
+        //SceneManager.LoadScene(2);
     }
 
     public void StorageHall()
     {
-        SceneManager.LoadScene(3);
+        animationFrame.SetActive(true);
+        doorAnimator.SetTrigger("DoorTransition");
+        //SceneManager.LoadScene(3);
     }
 
     public void Garage()
     {
-        SceneManager.LoadScene(4);
+        animationFrame.SetActive(true);
+        doorAnimator.SetTrigger("DoorTransition");
+        StartCoroutine(countdown());
+        buttonCheck();
+        //deactivate this button
+    }
+
+    IEnumerator countdown()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        animationFrame.SetActive(false);
     }
 }

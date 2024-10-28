@@ -50,13 +50,13 @@ public class HealthScript : MonoBehaviour
         hungerClock += Time.deltaTime;
         hungerMetar.fillAmount = hunger / 100;
 
-        if(hungerClock >= 480)
+        if (hungerClock >= 480)
         {
             hungerClock = 0;
             hunger--;
             LowerSanity(2);
         }
-        if(hunger <= 0)
+        if (hunger <= 0)
         {
             gameMenager.KillMe();
         }
@@ -65,13 +65,13 @@ public class HealthScript : MonoBehaviour
         thirstClock += Time.deltaTime;
         thirstMetar.fillAmount = thirst / 10;
 
-        if(thirstClock >= 720)
+        if (thirstClock >= 720)
         {
             thirstClock = 0;
             thirst -= 1;
             LowerSanity(1);
         }
-        if(thirst <= 0)
+        if (thirst <= 0)
         {
             gameMenager.KillMe();
         }
@@ -102,6 +102,6 @@ public class HealthScript : MonoBehaviour
         thirstClock = 0;
         thirst = 10f;
         AddSanity(1);
-        Debug.Log($"current thirst:{thirst }");
+        Debug.Log($"current thirst:{thirst}");
     }
 }
