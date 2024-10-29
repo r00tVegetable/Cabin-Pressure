@@ -8,12 +8,19 @@ using UnityEngine.UI;
 public class NavigationScript : MonoBehaviour
 {
     public List<GameObject> buttons = new List<GameObject>();
+    public List<GameObject> panels = new List<GameObject>();
 
     [SerializeField] GameObject CRButton;
     [SerializeField] GameObject LQButton;
     [SerializeField] GameObject SHButton;
     [SerializeField] GameObject WHButton;
     [SerializeField] GameObject TGButton;
+
+    [SerializeField] GameObject ComputerButton;
+    [SerializeField] GameObject ComputerOneButton;
+    [SerializeField] GameObject KitchenButton;
+    [SerializeField] GameObject InvetoryButton;
+    [SerializeField] GameObject ThinkeringButton;
 
     [SerializeField] Sprite[] backgrounds;
     [SerializeField] Image backgroundSprite;
@@ -35,6 +42,14 @@ public class NavigationScript : MonoBehaviour
             button.SetActive(true);
         }
     }
+    
+    public void panelCheck()
+    {
+        foreach (GameObject panel in panels)
+        {
+            panel.SetActive(true);
+        }
+    }
 
     public void ControlRoom()
     {
@@ -42,6 +57,7 @@ public class NavigationScript : MonoBehaviour
         StartCoroutine(countdownControlRoom());
         buttonCheck();
         CRButton.SetActive(false);
+
     }
 
     public void WindowHall()
