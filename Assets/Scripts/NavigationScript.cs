@@ -25,6 +25,7 @@ public class NavigationScript : MonoBehaviour
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
         buttonCheck();
         CRButton.SetActive(false);
+        animationFrame.SetActive(false);
     }
 
     public void buttonCheck()
