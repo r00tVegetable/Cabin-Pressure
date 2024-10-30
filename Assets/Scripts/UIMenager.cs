@@ -78,4 +78,13 @@ public class UIMenager : MonoBehaviour
         kitchenPannel.SetActive(false);
     }
 
+    public void OpenThinkering()
+    {
+        thinkeringPannel.SetActive(true);
+    }
+
+    public void CloseThinkering() 
+    { 
+        thinkeringPannel.SetActive(false);
+    }
 }

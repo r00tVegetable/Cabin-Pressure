@@ -16,11 +16,16 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] GameObject WHButton;
     [SerializeField] GameObject TGButton;
 
+    [SerializeField] GameObject controlbutton;
+    [SerializeField] GameObject controlbuttonOne;
+    [SerializeField] GameObject kitchenbutton;
+    [SerializeField] GameObject inventorybutton;
+    [SerializeField] GameObject thinkeringbutton;
+
     [SerializeField] Sprite[] backgrounds;
     [SerializeField] Image backgroundSprite;
 
     [SerializeField] GameObject animationFrame;
-    [SerializeField] UIMenager UIMenager;
 
     public void Start()
     {
@@ -29,7 +34,8 @@ public class NavigationScript : MonoBehaviour
         panelCheck();
         CRButton.SetActive(false);
         animationFrame.SetActive(false);
-        
+        controlbutton.SetActive(true);
+        controlbuttonOne.SetActive(true);
     }
 
     public void buttonCheck()
@@ -44,7 +50,7 @@ public class NavigationScript : MonoBehaviour
     {
         foreach (GameObject panel in panels)
         {
-            panel.SetActive(true);
+            panel.SetActive(false);
         }
     }
 
@@ -53,8 +59,10 @@ public class NavigationScript : MonoBehaviour
         animationFrame.SetActive(true);
         StartCoroutine(countdownControlRoom());
         buttonCheck();
+        panelCheck();
         CRButton.SetActive(false);
-
+        controlbutton.SetActive(true);
+        controlbuttonOne.SetActive(true);
     }
 
     public void WindowHall()
@@ -62,6 +70,7 @@ public class NavigationScript : MonoBehaviour
         animationFrame.SetActive(true);
         StartCoroutine(countdownWindowHall());
         buttonCheck();
+        panelCheck();
         WHButton.SetActive(false);
     }
 
@@ -70,7 +79,9 @@ public class NavigationScript : MonoBehaviour
         animationFrame.SetActive(true);
         StartCoroutine(countdownLivingQus());
         buttonCheck();
+        panelCheck();
         LQButton.SetActive(false);
+        kitchenbutton.SetActive(true);
     }
 
     public void StorageHall()
@@ -78,7 +89,9 @@ public class NavigationScript : MonoBehaviour
         animationFrame.SetActive(true);
         StartCoroutine(countdownStorageHall());
         buttonCheck();
+        panelCheck();
         SHButton.SetActive(false);
+        inventorybutton.SetActive(true);
     }
 
     public void Garage()
@@ -86,7 +99,9 @@ public class NavigationScript : MonoBehaviour
         animationFrame.SetActive(true);
         StartCoroutine(countdownGarage());
         buttonCheck();
+        panelCheck();
         TGButton.SetActive(false);
+        thinkeringbutton.SetActive(true);
     }
 
     IEnumerator countdownControlRoom()
