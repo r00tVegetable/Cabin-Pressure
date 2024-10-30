@@ -16,23 +16,20 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] GameObject WHButton;
     [SerializeField] GameObject TGButton;
 
-    [SerializeField] GameObject ComputerButton;
-    [SerializeField] GameObject ComputerOneButton;
-    [SerializeField] GameObject KitchenButton;
-    [SerializeField] GameObject InvetoryButton;
-    [SerializeField] GameObject ThinkeringButton;
-
     [SerializeField] Sprite[] backgrounds;
     [SerializeField] Image backgroundSprite;
 
     [SerializeField] GameObject animationFrame;
+    [SerializeField] UIMenager UIMenager;
 
     public void Start()
     {
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
         buttonCheck();
+        panelCheck();
         CRButton.SetActive(false);
         animationFrame.SetActive(false);
+        
     }
 
     public void buttonCheck()
@@ -42,7 +39,7 @@ public class NavigationScript : MonoBehaviour
             button.SetActive(true);
         }
     }
-    
+
     public void panelCheck()
     {
         foreach (GameObject panel in panels)
