@@ -7,8 +7,10 @@ public class UIMenager : MonoBehaviour
 {
     [SerializeField] GameObject pauseScreen;
     [SerializeField] GameObject controlPanel;
+    [SerializeField] GameObject controlPanelOne;
     [SerializeField] GameObject kitchenPannel;
     [SerializeField] GameObject inventoryPannel;
+    [SerializeField] GameObject thinkeringPannel;
 
     public void Start()
     {
@@ -23,16 +25,10 @@ public class UIMenager : MonoBehaviour
         //Pause Screen Control
         if (Input.GetKeyDown(KeyCode.Escape) && pauseScreen.activeInHierarchy == false)
         {
-            if (controlPanel.activeInHierarchy == true)
+            if (controlPanel.activeInHierarchy == true || kitchenPannel.activeInHierarchy == true || inventoryPannel.activeInHierarchy == true)
             {
                 controlPanel.SetActive(false);
-            }
-            if (kitchenPannel.activeInHierarchy == true)
-            {
                 kitchenPannel.SetActive(false);
-            }
-            if (inventoryPannel.activeInHierarchy == true)
-            {
                 inventoryPannel.SetActive(false);
             }
             else
