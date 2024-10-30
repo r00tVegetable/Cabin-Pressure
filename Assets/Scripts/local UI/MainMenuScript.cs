@@ -9,8 +9,15 @@ public class MainMenuScript : MonoBehaviour
     public GameObject SceneLoadingPanel;
 
     [SerializeField] AudioSource click;
+
     [SerializeField] GameObject videoPanel;
+    [SerializeField] GameObject twovideoPanel;
+    [SerializeField] GameObject threevideoPanel;
+    [SerializeField] GameObject transitionpanel;
     [SerializeField] VideoPlayer introplayer;
+    [SerializeField] VideoPlayer introtwoPlayer;
+    [SerializeField] VideoPlayer introthreePlayer;
+
     [SerializeField] GameObject backgroundMusic;
     public void Start()
     {
@@ -52,11 +59,21 @@ public class MainMenuScript : MonoBehaviour
 
     IEnumerator countToStart()
     {
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(1f);
         videoPanel.SetActive(true);
         introplayer.Play();
-        yield return new WaitForSecondsRealtime(23f);
+        yield return new WaitForSecondsRealtime(22.5f);
         videoPanel.SetActive(false);
+        twovideoPanel.SetActive(true);
+        introtwoPlayer.Play();
+        yield return new WaitForSecondsRealtime(13f);
+        twovideoPanel.SetActive(false);
+        transitionpanel.SetActive(true);
+        yield return new WaitForSecondsRealtime(2f);
+        transitionpanel.SetActive(false);
+        threevideoPanel.SetActive(true);
+        introthreePlayer.Play();
+        yield return new WaitForSecondsRealtime(71f);
         SceneManager.LoadScene(1);
     }
 }
