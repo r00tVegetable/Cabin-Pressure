@@ -26,6 +26,7 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] Image backgroundSprite;
 
     [SerializeField] GameObject animationFrame;
+    [SerializeField] AudioSource buttondown;
 
     public void Start()
     {
@@ -56,6 +57,7 @@ public class NavigationScript : MonoBehaviour
 
     public void ControlRoom()
     {
+        buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownControlRoom());
         buttonCheck();
@@ -67,6 +69,7 @@ public class NavigationScript : MonoBehaviour
 
     public void WindowHall()
     {
+        buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownWindowHall());
         buttonCheck();
@@ -76,6 +79,7 @@ public class NavigationScript : MonoBehaviour
 
     public void LivingQus()
     {
+        buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownLivingQus());
         buttonCheck();
@@ -86,6 +90,7 @@ public class NavigationScript : MonoBehaviour
 
     public void StorageHall()
     {
+        buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownStorageHall());
         buttonCheck();
@@ -96,6 +101,7 @@ public class NavigationScript : MonoBehaviour
 
     public void Garage()
     {
+        buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownGarage());
         buttonCheck();
