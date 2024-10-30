@@ -63,16 +63,16 @@ public class MainMenuScript : MonoBehaviour
         videoPanel.SetActive(true);
         introplayer.Play();
         yield return new WaitForSecondsRealtime(22.5f);
-        videoPanel.SetActive(false);
         twovideoPanel.SetActive(true);
         introtwoPlayer.Play();
+        videoPanel.SetActive(false);
         yield return new WaitForSecondsRealtime(13f);
-        twovideoPanel.SetActive(false);
         transitionpanel.SetActive(true);
+        twovideoPanel.SetActive(false);
         yield return new WaitForSecondsRealtime(2f);
-        transitionpanel.SetActive(false);
         threevideoPanel.SetActive(true);
         introthreePlayer.Play();
+        transitionpanel.SetActive(false);
         yield return new WaitForSecondsRealtime(71f);
         SceneManager.LoadScene(1);
     }
