@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class MainMenuScript : MonoBehaviour
 {
     public GameObject SceneLoadingPanel;
 
     [SerializeField] AudioSource click;
-
+    [SerializeField] GameObject videoPanel;
+    [SerializeField] VideoPlayer introplayer;
+    [SerializeField] GameObject backgroundMusic;
     public void Start()
     {
         SceneLoadingPanel.SetActive(false);
+        backgroundMusic.SetActive(true);
     }
 
     public void Update()
@@ -25,6 +29,7 @@ public class MainMenuScript : MonoBehaviour
     public void StartNewGame()
     {
         click.Play();
+        backgroundMusic.SetActive(false);
         StartCoroutine(countToStart());
     }
 
@@ -47,7 +52,11 @@ public class MainMenuScript : MonoBehaviour
 
     IEnumerator countToStart()
     {
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSecondsRealtime(1.5f);
+        videoPanel.SetActive(true);
+        introplayer.Play();
+        yield return new WaitForSecondsRealtime(23f);
+        videoPanel.SetActive(false);
         SceneManager.LoadScene(1);
     }
 }
