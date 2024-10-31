@@ -7,8 +7,8 @@ public class InventroyMenager : MonoBehaviour
 {
     public int food;
     public float water;
-    public int alloy;
-    public int carbon;
+    public float alloy;
+    public float carbon;
 
     [SerializeField] TMP_Text foodText;
     [SerializeField] TMP_Text waterText;
@@ -27,7 +27,7 @@ public class InventroyMenager : MonoBehaviour
     {
         foodText.text = $"{food} packs";
         waterText.text = string.Format("{0:00}", water) + " L";
-        alloyText.text = $"{alloy} kg";
-        carbonText.text = $"{carbon} kg";
+        alloyText.text = string.Format("{0:00}", alloy) + " kg";
+        carbonText.text = string.Format("{0:00}", carbon) + " kg";
     }
 }
