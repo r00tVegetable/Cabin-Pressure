@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventroyMenager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class InventroyMenager : MonoBehaviour
     [SerializeField] TMP_Text alloyText;
     [SerializeField] TMP_Text carbonText;
 
+    [SerializeField] Image waterLevel;
+
     public void Start()
     {
         food = 42;
@@ -26,8 +29,10 @@ public class InventroyMenager : MonoBehaviour
     public void Update()
     {
         foodText.text = $"{food} packs";
-        waterText.text = string.Format("{0:00}", water) + " L";
-        alloyText.text = string.Format("{0:00}", alloy) + " kg";
-        carbonText.text = string.Format("{0:00}", carbon) + " kg";
+        waterText.text = string.Format("{0:0.00}", water) + " L";
+        alloyText.text = string.Format("{0:0.00}", alloy) + " kg";
+        carbonText.text = string.Format("{0:0.00}", carbon) + " kg";
+
+        waterLevel.fillAmount = water / 100;
     }
 }

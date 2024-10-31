@@ -27,6 +27,7 @@ public class NavigationScript : MonoBehaviour
 
     [SerializeField] GameObject animationFrame;
     [SerializeField] AudioSource buttondown;
+    [SerializeField] AudioSource doorWoosh;
 
     public void Start()
     {
@@ -113,6 +114,7 @@ public class NavigationScript : MonoBehaviour
     IEnumerator countdownControlRoom()
     {
         yield return new WaitForSecondsRealtime(0.85f);
+        doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
@@ -120,6 +122,7 @@ public class NavigationScript : MonoBehaviour
     IEnumerator countdownWindowHall()
     {
         yield return new WaitForSecondsRealtime(0.85f);
+        doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[3];
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
@@ -127,6 +130,7 @@ public class NavigationScript : MonoBehaviour
     IEnumerator countdownLivingQus()
     {
         yield return new WaitForSecondsRealtime(0.85f);
+        doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[1];
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
@@ -135,6 +139,7 @@ public class NavigationScript : MonoBehaviour
     IEnumerator countdownStorageHall()
     {
         yield return new WaitForSecondsRealtime(0.85f);
+        doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[2];
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
@@ -143,8 +148,10 @@ public class NavigationScript : MonoBehaviour
     IEnumerator countdownGarage()
     {
         yield return new WaitForSecondsRealtime(0.85f);
+        doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[4];
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
     }
+
 }

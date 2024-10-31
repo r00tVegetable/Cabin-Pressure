@@ -22,6 +22,11 @@ public class HealthScript : MonoBehaviour
     [SerializeField] Image hungerMetar;
     [SerializeField] Image thirstMetar;
 
+    [SerializeField] AudioSource waterSound;
+    [SerializeField] AudioSource foodSound;
+
+    [SerializeField] InventroyMenager inventroyMenager;
+
     private void Start()
     {
         sanity = 100;
@@ -94,18 +99,20 @@ public class HealthScript : MonoBehaviour
 
     public void Eat(int amount)
     {
+        foodSound.Play();
         hungerClock = 0;
         hunger += amount;
         AddSanity(amount);
+        inventroyMenager.food -= amount;
         thirst++;
-        Debug.Log($"current hunger:{hunger}");
     }
 
     public void Drink()
     {
+        waterSound.Play();
         thirstClock = 0;
         thirst = 10f;
         AddSanity(1);
-        Debug.Log($"current thirst:{thirst}");
+        inventroyMenager.water -= 1.5f;
     }
 }
