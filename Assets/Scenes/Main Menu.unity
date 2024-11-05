@@ -963,7 +963,7 @@ VideoPlayer:
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!114 &615488251
@@ -1037,7 +1037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.92947924, y: 0.068296306}
   m_AnchorMax: {x: 0.92947924, y: 0.068296306}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 232.0165, y: 70.3309}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643348120
@@ -1499,7 +1499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8045831, y: 0.6815556}
   m_AnchorMax: {x: 0.8045831, y: 0.6815556}
-  m_AnchoredPosition: {x: -2.3099976, y: -1.555481}
+  m_AnchoredPosition: {x: -2.3100586, y: -1.555481}
   m_SizeDelta: {x: 351.99, y: 137.4073}
   m_Pivot: {x: 0.5, y: 0.5000002}
 --- !u!114 &1068416868
@@ -2082,7 +2082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.9871216, y: 0.9871826}
+  m_AnchoredPosition: {x: 0.98706055, y: 0.9871826}
   m_SizeDelta: {x: 21.7172, y: 21.7172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409223274
