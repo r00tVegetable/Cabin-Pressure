@@ -11,14 +11,10 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] AudioSource click;
 
     [SerializeField] GameObject videoPanel;
-    [SerializeField] GameObject twovideoPanel;
-    [SerializeField] GameObject threevideoPanel;
-    [SerializeField] GameObject transitionpanel;
     [SerializeField] VideoPlayer introplayer;
-    [SerializeField] VideoPlayer introtwoPlayer;
-    [SerializeField] VideoPlayer introthreePlayer;
 
     [SerializeField] GameObject backgroundMusic;
+
     public void Start()
     {
         SceneLoadingPanel.SetActive(false);
@@ -62,18 +58,7 @@ public class MainMenuScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         videoPanel.SetActive(true);
         introplayer.Play();
-        yield return new WaitForSecondsRealtime(22.5f);
-        twovideoPanel.SetActive(true);
-        introtwoPlayer.Play();
-        videoPanel.SetActive(false);
-        yield return new WaitForSecondsRealtime(13f);
-        transitionpanel.SetActive(true);
-        twovideoPanel.SetActive(false);
-        yield return new WaitForSecondsRealtime(2f);
-        threevideoPanel.SetActive(true);
-        introthreePlayer.Play();
-        transitionpanel.SetActive(false);
-        yield return new WaitForSecondsRealtime(71f);
+        yield return new WaitForSecondsRealtime(106f);
         SceneManager.LoadScene(1);
     }
 }

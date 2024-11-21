@@ -12,7 +12,7 @@ public class GameMenager : MonoBehaviour
     [SerializeField] TMP_Text O2Display;
     [SerializeField] float drainBuffer;
     [SerializeField] bool drainOxygen;
-    [SerializeField] bool solarPanels;       //Change to public when making electrolysis system.
+    [SerializeField] bool solarPanels;
     [SerializeField] bool stationPower;
     [SerializeField] Image powerLevel;
 
