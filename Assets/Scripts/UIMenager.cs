@@ -34,11 +34,13 @@ public class UIMenager : MonoBehaviour
             else
             {
                 pauseScreen.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && pauseScreen.activeInHierarchy == true)
         {
             pauseScreen.SetActive(false);
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
     }

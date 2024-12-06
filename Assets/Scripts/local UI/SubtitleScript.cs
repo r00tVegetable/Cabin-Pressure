@@ -62,6 +62,12 @@ public class SubtitleScript : MonoBehaviour
         textSub.text = "Vanessa: I’m either about to get paid a fortune in overtime… or something is seriously wrong.";
         yield return new WaitForSecondsRealtime(6f);
         textSub.text = string.Empty;
+        yield return new WaitForSecondsRealtime(22f);
+        textSub.text = "Jerry: (From the closet) Oh no, what if they forgot about you?";
+        yield return new WaitForSecondsRealtime(4f);
+        textSub.text = "Vanessa: Shut up, Jerry!";
+        yield return new WaitForSecondsRealtime(1.5f);
+        textSub.text = string.Empty;
     }
 }
 

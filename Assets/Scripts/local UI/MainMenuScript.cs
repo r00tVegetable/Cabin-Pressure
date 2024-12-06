@@ -19,6 +19,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void Start()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         SceneLoadingPanel.SetActive(false);
         skipButton.SetActive(false);
         backgroundMusic.SetActive(true);
@@ -32,6 +33,7 @@ public class MainMenuScript : MonoBehaviour
         }
         if(Input.anyKey && videoPanel.activeInHierarchy == true)
         {
+            Cursor.visible = true;
             StartCoroutine(SkipButton());
         }
     }
@@ -40,6 +42,7 @@ public class MainMenuScript : MonoBehaviour
     {
         click.Play();
         backgroundMusic.SetActive(false);
+        Cursor.visible = false;
         StartCoroutine(countToStart());
     }
 
@@ -80,5 +83,6 @@ public class MainMenuScript : MonoBehaviour
         skipButton.SetActive(true);
         yield return new WaitForSecondsRealtime(3f);
         skipButton.SetActive(false);
+        Cursor.visible = false;
     }
 }

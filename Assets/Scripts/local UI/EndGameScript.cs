@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EndGameScript : MonoBehaviour
 {
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
     public void TryAgain()
     {
         SceneManager.LoadScene(1);
