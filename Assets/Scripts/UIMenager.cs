@@ -13,6 +13,8 @@ public class UIMenager : MonoBehaviour
 
     public void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         pauseScreen.SetActive(false);
         controlPanel.SetActive(false);
         kitchenPannel.SetActive(false);

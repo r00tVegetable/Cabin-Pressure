@@ -25,6 +25,7 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] Sprite[] backgrounds;
     [SerializeField] Image backgroundSprite;
     [SerializeField] TMP_Text backgroundText;
+    [SerializeField] TMP_Text roomOverText;
 
     [SerializeField] GameObject animationFrame;
     [SerializeField] AudioSource buttondown;
@@ -56,6 +57,32 @@ public class NavigationScript : MonoBehaviour
         {
             panel.SetActive(false);
         }
+    }
+
+    public void CRHover()
+    {
+        roomOverText.text = "Control Room";
+    }
+    public void LQHover()
+    {
+        roomOverText.text = "Living Quarters";
+    }
+    public void SHHover()
+    {
+        roomOverText.text = "Storage Hallway";
+    }
+    public void WHHover()
+    {
+        roomOverText.text = "Window Hallway";
+    }
+    public void TGHover()
+    {
+        roomOverText.text = "The Garage";
+    }
+
+    public void ReverseHover()
+    {
+        roomOverText.text = string.Empty;
     }
 
     public void ControlRoom()

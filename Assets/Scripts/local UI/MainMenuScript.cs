@@ -20,6 +20,7 @@ public class MainMenuScript : MonoBehaviour
     public void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         SceneLoadingPanel.SetActive(false);
         skipButton.SetActive(false);
         backgroundMusic.SetActive(true);
