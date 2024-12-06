@@ -11,6 +11,8 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] AudioSource click;
 
     [SerializeField] GameObject videoPanel;
+    [SerializeField] GameObject skipButton;
+    [SerializeField] SubtitleScript subtitleScript;
     [SerializeField] VideoPlayer introplayer;
 
     [SerializeField] GameObject backgroundMusic;
@@ -18,14 +20,19 @@ public class MainMenuScript : MonoBehaviour
     public void Start()
     {
         SceneLoadingPanel.SetActive(false);
+        skipButton.SetActive(false);
         backgroundMusic.SetActive(true);
     }
 
     public void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && SceneLoadingPanel.activeInHierarchy == true)
         {
             SceneLoadingPanel.SetActive(false);
+        }
+        if(Input.anyKey && videoPanel.activeInHierarchy == true)
+        {
+            StartCoroutine(SkipButton());
         }
     }
 
@@ -53,12 +60,25 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
+    public void SkipIntro()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     IEnumerator countToStart()
     {
         yield return new WaitForSecondsRealtime(1f);
         videoPanel.SetActive(true);
         introplayer.Play();
+        subtitleScript.IntroSequance();
         yield return new WaitForSecondsRealtime(106f);
         SceneManager.LoadScene(1);
+    }
+
+    IEnumerator SkipButton()
+    {
+        skipButton.SetActive(true);
+        yield return new WaitForSecondsRealtime(3f);
+        skipButton.SetActive(false);
     }
 }
