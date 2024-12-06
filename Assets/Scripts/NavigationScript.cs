@@ -24,6 +24,7 @@ public class NavigationScript : MonoBehaviour
 
     [SerializeField] Sprite[] backgrounds;
     [SerializeField] Image backgroundSprite;
+    [SerializeField] TMP_Text backgroundText;
 
     [SerializeField] GameObject animationFrame;
     [SerializeField] AudioSource buttondown;
@@ -32,6 +33,7 @@ public class NavigationScript : MonoBehaviour
     public void Start()
     {
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
+        backgroundText.text = "Control Room";
         buttonCheck();
         panelCheck();
         CRButton.SetActive(false);
@@ -116,6 +118,7 @@ public class NavigationScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.85f);
         doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
+        backgroundText.text = "Control Room";
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
     }
@@ -124,6 +127,7 @@ public class NavigationScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.85f);
         doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[3];
+        backgroundText.text = "Window Hallway";
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
     }
@@ -132,6 +136,7 @@ public class NavigationScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.85f);
         doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[1];
+        backgroundText.text = "Living Quarters";
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
     } 
@@ -141,6 +146,7 @@ public class NavigationScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.85f);
         doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[2];
+        backgroundText.text = "Storage Hallway";
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
     }
@@ -150,6 +156,7 @@ public class NavigationScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.85f);
         doorWoosh.Play();
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[4];
+        backgroundText.text = "The Garage";
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);
     }
