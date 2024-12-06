@@ -39,7 +39,7 @@ public class SubtitleScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(5.5f);
         textSub.text = string.Empty;
         yield return new WaitForSecondsRealtime(11.5f);
-        textSub.text = "Vanessa: Shit, shit, shit";
+        textSub.text = "Vanessa: Shit, shit, shit!";
         yield return new WaitForSecondsRealtime(1.5f);
         textSub.text = string.Empty;
         yield return new WaitForSecondsRealtime(5.5f);
