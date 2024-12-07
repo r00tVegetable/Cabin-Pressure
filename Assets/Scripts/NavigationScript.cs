@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NavigationScript : MonoBehaviour
 {
@@ -21,6 +21,10 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] GameObject kitchenbutton;
     [SerializeField] GameObject inventorybutton;
     [SerializeField] GameObject thinkeringbutton;
+    [SerializeField] GameObject sleepingStation;
+
+    [SerializeField] GameObject leftScroll;
+    [SerializeField] GameObject rightScroll;
 
     [SerializeField] Sprite[] backgrounds;
     [SerializeField] Image backgroundSprite;
@@ -116,6 +120,27 @@ public class NavigationScript : MonoBehaviour
         panelCheck();
         LQButton.SetActive(false);
         kitchenbutton.SetActive(true);
+        
+    }
+
+    public void SleepingDoc()
+    {
+        buttondown.Play();
+        kitchenbutton.SetActive(false);
+        rightScroll.SetActive(false);
+        leftScroll.SetActive(true);
+        sleepingStation.SetActive(true);
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[6];
+    }
+    
+    public void BackToKitchen()
+    {
+        buttondown.Play();
+        kitchenbutton.SetActive(true);
+        rightScroll.SetActive(true);
+        leftScroll.SetActive(false);
+        sleepingStation.SetActive(false);
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[1];
     }
 
     public void StorageHall()
@@ -165,6 +190,7 @@ public class NavigationScript : MonoBehaviour
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[1];
         backgroundText.text = "Living Quarters";
         yield return new WaitForSecondsRealtime(0.85f);
+        rightScroll.SetActive(true);
         animationFrame.SetActive(false);
     } 
     
