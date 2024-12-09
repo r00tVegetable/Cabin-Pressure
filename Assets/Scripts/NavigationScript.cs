@@ -27,6 +27,7 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] GameObject rightScroll;
 
     [SerializeField] Sprite[] backgrounds;
+    [SerializeField] GameObject[] CharacterSprites;
     [SerializeField] Image backgroundSprite;
     [SerializeField] TMP_Text backgroundText;
     [SerializeField] TMP_Text roomOverText;
@@ -35,9 +36,11 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] AudioSource buttondown;
     [SerializeField] AudioSource doorWoosh;
 
+    public bool isInStorage;
+
     public void Start()
     {
-        backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[5];
         backgroundText.text = "Control Room";
         animationFrame.SetActive(false);
     }
@@ -62,6 +65,27 @@ public class NavigationScript : MonoBehaviour
         foreach (GameObject panel in panels)
         {
             panel.SetActive(false);
+        }
+    }
+
+    public void boolCheck()
+    {
+        isInStorage = false;
+    }
+
+    public void CharactersOff()
+    {
+        foreach(GameObject sprite in CharacterSprites)
+        {
+            sprite.SetActive(false);
+        }
+    }
+
+    public void CharactersOn()
+    {
+        foreach (GameObject sprite in CharacterSprites)
+        {
+            sprite.SetActive(true);
         }
     }
 
@@ -96,8 +120,10 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownControlRoom());
+        CharactersOff();
         buttonsOn();
         panelCheck();
+        boolCheck();
         CRButton.SetActive(false);
         controlbutton.SetActive(true);
         controlbuttonOne.SetActive(true);
@@ -108,8 +134,10 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownWindowHall());
+        CharactersOff();
         buttonsOn();
         panelCheck();
+        boolCheck();
         WHButton.SetActive(false);
     }
 
@@ -118,8 +146,10 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownLivingQus());
+        CharactersOff();
         buttonsOn();
         panelCheck();
+        boolCheck();
         LQButton.SetActive(false);
         kitchenbutton.SetActive(true);
         
@@ -150,8 +180,11 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownStorageHall());
+        CharactersOff();
         buttonsOn();
         panelCheck();
+        boolCheck();
+        isInStorage = true;
         SHButton.SetActive(false);
         inventorybutton.SetActive(true);
     }
@@ -161,8 +194,10 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownGarage());
+        CharactersOff();
         buttonsOn();
         panelCheck();
+        boolCheck();
         TGButton.SetActive(false);
         thinkeringbutton.SetActive(true);
     }
@@ -171,7 +206,7 @@ public class NavigationScript : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.85f);
         doorWoosh.Play();
-        backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[5];
         backgroundText.text = "Control Room";
         yield return new WaitForSecondsRealtime(0.85f);
         animationFrame.SetActive(false);

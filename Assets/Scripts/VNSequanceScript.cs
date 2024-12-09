@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 
 public class VNSequanceScript : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class VNSequanceScript : MonoBehaviour
     [SerializeField] AudioSource VoiceOversSource5;
     [SerializeField] AudioSource VoiceOversSource6;
     [SerializeField] AudioSource VoiceOversSource7;
+    [SerializeField] AudioSource VoiceOversSource8;
+    [SerializeField] AudioSource VoiceOversSource9;
 
 
     [SerializeField] AudioSource ChimeUI1;
@@ -57,6 +60,18 @@ public class VNSequanceScript : MonoBehaviour
     //VOSubtitle.text = "Vanessa: ";
     //VOSubtitle.text = "Station UI: ";
     //yield return new WaitForSecondsRealtime(f);
+
+    public void Update()
+    {
+        if (slideNo == 9 && NavigationScript.isInStorage == true)  
+        {
+            NavigationScript.buttonsOff();
+            StartCoroutine(CharacterDelay());
+            VOSubtitle.text = string.Empty;
+            slideNo = 10;
+        }
+    }
+
     public void SlideChecker()
     {
         if (slideNo == 0)
@@ -93,21 +108,51 @@ public class VNSequanceScript : MonoBehaviour
         }
         if (slideNo == 5)
         {
-            StartCoroutine(slideFour());
+            VanessaFaceSide.sprite = VanessaFaceSprite[7];
+            VOSubtitle.text = "Vanessa: The grace period of 72 h after a missed scheduled pick up post-expiration of a work contract officially expired.";
+            VoiceOversSource5.Play();
+            StartCoroutine(skipDelay());
         }
         if(slideNo == 6)
         {
             VanessaFaceFront.sprite = VanessaFaceSprite[10];
-            VOSubtitle.text = "Vanessa: The comms system was critically damaged in the solar storm a few days ago. I have no way of contacting headquarters… Or anyone else for that matter.";
+            VOSubtitle.text = "Vanessa: I am still on my assigned post.Station registration code is VOC - 916.";
             VoiceOversSource6.Play();
             StartCoroutine(skipDelay());
         }
         if (slideNo == 7)
         {
+            Vanessa.sprite = VanessaPoses[8];
+            VOSubtitle.text = "Vanessa: The comms system was critically damaged in the solar storm a few days ago. I have no way of contacting headquarters… Or anyone else for that matter.";
+            VoiceOversSource7.Play();
+            StartCoroutine(skipDelay());
+        }
+        if (slideNo == 8)
+        {
             VanessaFaceFront.sprite = VanessaFaceSprite[12];
             VOSubtitle.text = "Vanessa: All other crucial systems are functional. Pause recording.";
-            VoiceOversSource7.Play();
-            StartCoroutine(slideSeven());
+            VoiceOversSource8.Play();
+            StartCoroutine(slideEight());
+            StartCoroutine(skipDelay());
+        }
+        if(slideNo == 9)
+        {
+            NavigationScript.buttonsOn();
+            VanessaFaceSideGO.SetActive(true);
+            VanessaFaceFrontGO.SetActive(false);
+            Vanessa.sprite = VanessaPoses[0];
+            VanessaFaceSide.sprite = VanessaFaceSprite[0];
+            VOSubtitle.text = "OBJECTIVE: Go to the Storage Hallway. Use the mini-map in the lower right corner to navigate the Station.";
+        }
+        if (slideNo == 10)
+        {
+            Vanessa.sprite = VanessaPoses[0];
+            VanessaFaceSide.sprite = VanessaFaceSprite[0];
+            StartCoroutine(slideTen());
+        }
+        if (slideNo == 11)
+        {
+
         }
         else 
         {
@@ -138,27 +183,31 @@ public class VNSequanceScript : MonoBehaviour
         StartCoroutine(skipDelay());
     }
 
-    IEnumerator slideFour()
+    IEnumerator slideEight()
     {
-        yield return new WaitForSecondsRealtime(1f);
-        VanessaFaceSide.sprite = VanessaFaceSprite[7];
-        VOSubtitle.text = "Vanessa: The grace period of 72 h after a missed scheduled pick up post-expiration of a work contract officially expired.";
-        VoiceOversSource5.Play();
-        StartCoroutine(skipDelay());
-    }
-
-    IEnumerator slideSeven()
-    {
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSecondsRealtime(4f);
         ChimeUI2.Play();
-        StartCoroutine(skipDelay());
         yield return new WaitForSecondsRealtime(2f);
         ChimeUI3.Play();
+    }
+
+    IEnumerator slideTen()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        VoiceOversSource9.Play();
+        VOSubtitle.text = "Vanessa: Resume recording.";
+        StartCoroutine(skipDelay());
     }
 
     IEnumerator skipDelay()
     {
         yield return new WaitForSecondsRealtime(1f);
         buttonForNext.SetActive(true);
+    }
+
+    IEnumerator CharacterDelay()
+    {
+        yield return new WaitForSecondsRealtime(0.85f);
+        NavigationScript.CharactersOn();
     }
 }

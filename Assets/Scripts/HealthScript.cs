@@ -29,9 +29,9 @@ public class HealthScript : MonoBehaviour
 
     private void Start()
     {
-        sanity = 100;
-        hunger = 100;
-        thirst = 10;
+        sanity = 40;
+        hunger = 7;
+        thirst = 6;
 
         hungerClock = 0;
     }
@@ -53,7 +53,7 @@ public class HealthScript : MonoBehaviour
 
         //Hunger clock:
         hungerClock += Time.deltaTime;
-        hungerMetar.fillAmount = hunger / 100;
+        hungerMetar.fillAmount = hunger / 10;
 
         if (hungerClock >= 480)
         {
@@ -61,9 +61,9 @@ public class HealthScript : MonoBehaviour
             hunger--;
             LowerSanity(2);
         }
-        if(hunger > 100)
+        if(hunger > 10)
         {
-            hunger = 100f;
+            hunger = 10f;
         }
         if (hunger <= 0)
         {
