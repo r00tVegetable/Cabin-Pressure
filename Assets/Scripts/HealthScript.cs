@@ -105,6 +105,7 @@ public class HealthScript : MonoBehaviour
         AddSanity(amount);
         inventroyMenager.food -= amount;
         thirst++;
+        StartCoroutine(AudioCutFood());
     }
 
     public void Drink()
@@ -114,5 +115,18 @@ public class HealthScript : MonoBehaviour
         thirst = 10f;
         AddSanity(1);
         inventroyMenager.water -= 1.5f;
+        StartCoroutine(AudiocutWater());
+    }
+
+    IEnumerator AudioCutFood()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        foodSound.Stop();
+    }
+
+    IEnumerator AudiocutWater()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        waterSound.Stop();
     }
 }
