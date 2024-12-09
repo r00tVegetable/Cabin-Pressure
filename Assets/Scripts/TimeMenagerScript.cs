@@ -20,7 +20,7 @@ public class TimeMenagerScript : MonoBehaviour
     public void KeepTime()
     {
         Time.timeScale = 1.0f;
-        inGameTime += Time.deltaTime * 5f;
+        inGameTime += Time.deltaTime * 2f;
 
         if (inGameTime >= 1439.0f)
         {

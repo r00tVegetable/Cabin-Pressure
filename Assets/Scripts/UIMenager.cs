@@ -91,4 +91,5 @@ public class UIMenager : MonoBehaviour
     { 
         thinkeringPannel.SetActive(false);
     }
+
 }

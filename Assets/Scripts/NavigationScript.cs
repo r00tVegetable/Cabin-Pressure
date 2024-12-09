@@ -39,19 +39,21 @@ public class NavigationScript : MonoBehaviour
     {
         backgroundSprite.GetComponent<Image>().sprite = backgrounds[0];
         backgroundText.text = "Control Room";
-        buttonCheck();
-        panelCheck();
-        CRButton.SetActive(false);
         animationFrame.SetActive(false);
-        controlbutton.SetActive(true);
-        controlbuttonOne.SetActive(true);
     }
 
-    public void buttonCheck()
+    public void buttonsOn()
     {
         foreach (GameObject button in buttons)
         {
             button.SetActive(true);
+        }
+    }
+    public void buttonsOff()
+    {
+        foreach (GameObject button in buttons)
+        {
+            button.SetActive(false);
         }
     }
 
@@ -94,7 +96,7 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownControlRoom());
-        buttonCheck();
+        buttonsOn();
         panelCheck();
         CRButton.SetActive(false);
         controlbutton.SetActive(true);
@@ -106,7 +108,7 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownWindowHall());
-        buttonCheck();
+        buttonsOn();
         panelCheck();
         WHButton.SetActive(false);
     }
@@ -116,7 +118,7 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownLivingQus());
-        buttonCheck();
+        buttonsOn();
         panelCheck();
         LQButton.SetActive(false);
         kitchenbutton.SetActive(true);
@@ -148,7 +150,7 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownStorageHall());
-        buttonCheck();
+        buttonsOn();
         panelCheck();
         SHButton.SetActive(false);
         inventorybutton.SetActive(true);
@@ -159,7 +161,7 @@ public class NavigationScript : MonoBehaviour
         buttondown.Play();
         animationFrame.SetActive(true);
         StartCoroutine(countdownGarage());
-        buttonCheck();
+        buttonsOn();
         panelCheck();
         TGButton.SetActive(false);
         thinkeringbutton.SetActive(true);
