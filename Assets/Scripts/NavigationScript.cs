@@ -19,7 +19,7 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] GameObject controlbutton;
     [SerializeField] GameObject controlbuttonOne;
     [SerializeField] GameObject kitchenbutton;
-    [SerializeField] GameObject inventorybutton;
+    [SerializeField] public GameObject inventorybutton;
     [SerializeField] GameObject thinkeringbutton;
     [SerializeField] GameObject sleepingStation;
 
@@ -32,9 +32,9 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] TMP_Text backgroundText;
     [SerializeField] TMP_Text roomOverText;
 
-    [SerializeField] GameObject animationFrame;
+    [SerializeField] public GameObject animationFrame;
     [SerializeField] AudioSource buttondown;
-    [SerializeField] AudioSource doorWoosh;
+    [SerializeField] public AudioSource doorWoosh;
 
     public bool isInStorage;
 
@@ -162,7 +162,7 @@ public class NavigationScript : MonoBehaviour
         rightScroll.SetActive(false);
         leftScroll.SetActive(true);
         sleepingStation.SetActive(true);
-        backgroundSprite.GetComponent<Image>().sprite = backgrounds[6];
+        backgroundSprite.GetComponent<Image>().sprite = backgrounds[7];
     }
     
     public void BackToKitchen()

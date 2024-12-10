@@ -18,10 +18,7 @@ public class SubtitleScript : MonoBehaviour
         SubtitleText.SetActive(true);
         textSub.text = string.Empty;
     }
-    //textSub.text = "";
-    //textSub.text = "Vanessa: ";
-    //yield return new WaitForSecondsRealtime(f);
-
+    
     public void IntroSequance()
     {
         StartCoroutine(IntroSQ());

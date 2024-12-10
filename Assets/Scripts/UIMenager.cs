@@ -8,7 +8,7 @@ public class UIMenager : MonoBehaviour
     [SerializeField] GameObject pauseScreen;
     [SerializeField] GameObject controlPanel;
     [SerializeField] GameObject kitchenPannel;
-    [SerializeField] GameObject inventoryPannel;
+    [SerializeField] public GameObject inventoryPannel;
     [SerializeField] GameObject thinkeringPannel;
 
     public void Start()
@@ -47,6 +47,17 @@ public class UIMenager : MonoBehaviour
 
     }
 
+    public void Pause()
+    {
+        pauseScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Unpause()
+    {
+        pauseScreen.SetActive(false);
+        Cursor.lockState = CursorLockMode.Confined;
+    }
     public void BackToMain()
     {
         pauseScreen.SetActive(false);
